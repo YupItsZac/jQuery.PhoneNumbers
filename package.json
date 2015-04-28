@@ -1,0 +1,19 @@
+{
+  "name": "phonenumbers",
+  "version": "1.0.1",
+  "description": "The jQuery.PhoneNumbers plugin automatically detects phone numbers on the page and makes them clickable for dialing.",
+  "main": "jquery.PhoneNumbers.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YupItsZac/jQuery.PhoneNumbers"
+  },
+  "keywords": [
+    "jquery, phone-numbers, clickable-phone, call-links, ecosystem:jquery, external-links"
+  ],
+  "author": "Zac Brown",
+  "license": "http://www.opensource.org/licenses/MIT",
+  "bugs": {
+    "url": "https://github.com/YupItsZac/jQuery.PhoneNumbers/issues"
+  },
+  "homepage": "https://github.com/YupItsZac/jQuery.PhoneNumbers"
+}
