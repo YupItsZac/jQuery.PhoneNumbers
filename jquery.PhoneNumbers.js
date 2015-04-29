@@ -4,7 +4,7 @@
 // Web: http://www.yupitszac.com
 // Demo: http://www.yupitszac.com/demo/jquery-phone-numbers
 // Support: @YupItsZac - Twitter, or fb.me/yupitszac
-// Version 1.0.1 April 28, 2015
+// Version 1.0.2 April 29, 2015
 
 (function( $ ) {
 
@@ -14,7 +14,7 @@
 			protocol: 'tel://',
 			linkColor: '#ffffff',
 			linkDecoration: 'underline',
-			target: 'body',
+			target: [],
 			mobileOnly: false
 		}
 
@@ -29,16 +29,6 @@
 			if(window.matchMedia("only screen and (max-width: 760px)").matches) {
 				jQuery.options.execute = true;
 
-				
-				if(jQuery.options.ignoreLinks) {
-					var text = $(jQuery.options.target).not('a').html();
-				} else {
-					var text = $(jQuery.options.target).html();
-				}
-
-				text = text.replace(jQuery.options.pattern, "<a style='color: "+jQuery.options.linkColor+"; text-decoration: "+jQuery.options.linkDecoration+"' href=\"tel:$&\">$&</a>");
-
-				$(jQuery.options.target).html(text);
 			} else {
 				jQuery.options.execute = false;
 			}
@@ -48,18 +38,17 @@
 
 		if(jQuery.options.execute) {
 
-			if(jQuery.options.ignoreLinks) {
-				var text = $(jQuery.options.target).not('a').html();
-			} else {
-				var text = $(jQuery.options.target).html();
-			}
+			$.each(jQuery.options.target, function(index, value) {
 
-			text = text.replace(jQuery.options.pattern, "<a style='color: "+jQuery.options.linkColor+"; text-decoration: "+jQuery.options.linkDecoration+"' href=\"tel:$&\">$&</a>");
+				var text = $(value).html();
 
-			$(jQuery.options.target).html(text);
+				text = text.replace(jQuery.options.pattern, "<a style='color: "+jQuery.options.linkColor+"; text-decoration: "+jQuery.options.linkDecoration+"' href='"+jQuery.options.protocol+"$&'>$&</a>");
+
+				$(value).html(text);
+
+			});
 		}
 
-
-	}
+	};
 
 })( jQuery );

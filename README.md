@@ -7,9 +7,9 @@ This plugin is distributed as is, and does not include any official support. How
 
 Also, if you'd like to contribute to the plugin, that's cool too. Just fork and start creating!
 
-**Current Version:** 1.0.1
+**Current Version:** 1.0.2
 
-**Release Date:** April 28, 2015
+**Release Date:** April 29, 2015
 
 
 Usage
@@ -53,7 +53,7 @@ $.fn.PhoneNumbers({
 	protocol: 'tel://',
 	linkColor: '#ffffff',
 	linkDecoration: 'underline',
-	target: 'body',
+	target: ['#div', '.class'],
 	mobileOnly: true
 });
 
@@ -68,7 +68,7 @@ Options
 
 **protocol** - This determines which telephone protocol to use for the link. tel:, or tel://. This is a string, set to tel:// by default. Ex: protocol: 'tel://'
 
-**target** - The object you want to scan for phone numbers. This is useful if you only want the numbers in a specific div to be clickable. This is a string value set to body by default. Ex: target: 'body'
+**target** - An array containing the elements you would like to scan for numbers. 
 
 **mobileOnly** - This option determines which platform you want th elinks to be clickable on. If set to false, the plugin will ignore the platform and make all numbers call links. If set to true, the plugin will only initialize if the user is on a mobile device. This is a boolean value set to true by default. Ex: mobileOnly: true
 
